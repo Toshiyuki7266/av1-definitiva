@@ -34,7 +34,7 @@
     font-family: 'Roboto', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
-    
+    scroll-behavior: smooth;
 }
 
 body{
