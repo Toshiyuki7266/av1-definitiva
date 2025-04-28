@@ -1,785 +1,817 @@
-/*variáveis Dark Mode*/
-:root{
-    --body-gb: #fafafa;
-    --bg-dark-mode: #d3d2d2;
-    --btn-dark-mode:#292929;
-    --body-navbar:  #f2f2f2;
-    --bady-bg-sec:rgba(160, 160, 160, 0.103);
-    --body-color:#555;
-    --body-color-p:#252525;
-    --body-color-footer: #fff;
-    --link-color: #222;
-    --link-color-hover:rgba(202, 223, 166, 1);
+/* Variáveis para o modo claro e escuro */
+:root {
+    /* Cores e variáveis para o modo claro */
+    --body-gb: #fafafa; /* Cor de fundo do corpo */
+    --bg-dark-mode: #d3d2d2; /* Cor de fundo para elementos em modo escuro */
+    --btn-dark-mode: #292929; /* Cor do botão em modo escuro */
+    --body-navbar: #f2f2f2; /* Cor de fundo da barra de navegação */
+    --bady-bg-sec: rgba(160, 160, 160, 0.103); /* Cor de fundo para seções secundárias */
+    --body-color: #555; /* Cor do texto principal */
+    --body-color-p: #252525; /* Cor do texto em parágrafos */
+    --body-color-footer: #fff; /* Cor de fundo do rodapé */
+    --link-color: #222; /* Cor dos links */
+    --link-color-hover: rgba(202, 223, 166, 1); /* Cor dos links ao passar o mouse */
 }
 
-
-.dark-mode:root{
-    --body-gb: #292929;
-    --bg-dark-mode: #292929;
-    --btn-dark-mode:#bfa640;
-    --body-navbar:  #1f1f1f;
-    --bady-bg-sec:rgb(26, 26, 26);
-    --body-color:rgb(180, 180, 180);
-    --body-color-p:#dddddd;
-    --body-color-footer: #fff;
-    --link-color: rgb(223, 221, 221);
-    --link-color-hover:rgba(202, 223, 166, 1);
+/* Estilos para o modo escuro */
+.dark-mode:root {
+    /* Cores e variáveis para o modo escuro */
+    --body-gb: #292929; /* Cor de fundo do corpo em modo escuro */
+    --bg-dark-mode: #292929; /* Cor de fundo para elementos em modo escuro */
+    --btn-dark-mode: #bfa640; /* Cor do botão em modo escuro */
+    --body-navbar: #1f1f1f; /* Cor de fundo da barra de navegação em modo escuro */
+    --bady-bg-sec: rgb(26, 26, 26); /* Cor de fundo para seções secundárias em modo escuro */
+    --body-color: rgb(180, 180, 180); /* Cor do texto principal em modo escuro */
+    --body-color-p: #dddddd; /* Cor do texto em parágrafos em modo escuro */
+    --body-color-footer: #fff; /* Cor de fundo do rodapé em modo escuro */
+    --link-color: rgb(223, 221, 221); /* Cor dos links em modo escuro */
+    --link-color-hover: rgba(202, 223, 166, 1); /* Cor dos links ao passar o mouse em modo escuro */
 }
 
-
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    scroll-behavior: smooth;
+/* Estilos gerais para todos os elementos */
+* {
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    text-decoration: none; /* Remove o sublinhado de links */
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão */
+    transition-property: background-color; /* Define a propriedade que terá transição */
+    transition-duration: 1s; /* Define a duração da transição */
+    scroll-behavior: smooth; /* Define um comportamento de rolagem suave */
 }
 
-body{
-    padding-top: 100px;
-    background-color: var(--body-gb);
+/* Estilos para o corpo da página */
+body {
+    padding-top: 100px; /* Adiciona espaço no topo do corpo */
+    background-color: var(--body-gb); /* Define a cor de fundo usando a variável */
 }
 
-
-
-/*button Dark Mode*/
-
-.dark-mode-container{
-    margin: 0 0 0 20px;
+/* Estilos para o botão de modo escuro */
+.dark-mode-container {
+    margin: 0 0 0 20px; /* Adiciona margem à esquerda do contêiner do botão */
 }
 
-#switch{
-    position: relative;
-    width: 50px;
+/* Estilos para o switch do modo escuro */
+#switch {
+    position: relative; /* Define a posição relativa para o switch */
+    width: 50px; /* Define a largura do switch */
 }
 
-#switch::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 50px;
-    height: 25px;
-    background: var(--bg-dark-mode);
-    border-radius: 20px;
+/* Estilos para o fundo do switch antes de ser ativado */
+#switch::before {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute; /* Define a posição absoluta para o fundo do switch */
+    left: 0; /* Alinha à esquerda */
+    width: 50px; /* Define a largura do fundo do switch */
+    height: 25px; /* Define a altura do fundo do switch */
+    background: var(--bg-dark-mode); /* Define a cor de fundo usando a variável */
+    border-radius: 20px; /* Adiciona bordas arredondadas ao fundo do switch */
 }
 
-#switch:checked:before{
-    background: #555;
+/* Estilos para o fundo do switch quando ativado */
+#switch:checked:before {
+    background: #555; /* Altera a cor de fundo quando o switch está ativado */
+}
+/* Estilos para o ícone do switch do modo escuro */
+#switch::after {
+    content: '🌙'; /* Adiciona um ícone de lua como conteúdo do switch */
+    position: absolute; /* Define a posição absoluta para o ícone */
+    width: 25px; /* Define a largura do ícone */
+    height: 25px; /* Define a altura do ícone */
+    background: var(--btn-dark-mode); /* Define a cor de fundo usando a variável */
+    border-radius: 20px; /* Adiciona bordas arredondadas ao ícone */
+    transition: .25s; /* Define a duração da transição para o movimento do ícone */
+    border: 3px solid var(--btn-dark-mode); /* Adiciona uma borda ao ícone */
+    box-sizing: border-box; /* Inclui a borda no cálculo da largura e altura do ícone */
 }
 
-#switch::after{
-    content: '🌙';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: var(--btn-dark-mode);
-    border-radius: 20px;
-    transition: .25s;
-    border: 3px solid var(--btn-dark-mode);
-    box-sizing: border-box;
-}
-#switch:checked::after{
-    left: 25px;
+/* Estilos para o ícone do switch quando ativado */
+#switch:checked::after {
+    left: 25px; /* Move o ícone para a direita quando o switch está ativado */
 }
 
-@media(max-width:880px){
-    #switch{
-        margin: 20px 40px;
-        
+/* Estilos responsivos para o switch em telas menores */
+@media(max-width: 880px) {
+    #switch {
+        margin: 20px 40px; /* Adiciona margem ao switch em telas menores */
     }
 }
 
-
-
-/* header */
-
-.menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8); 
-    height: 100px;
-    padding: 0;
+/* Estilos para o cabeçalho da página */
+.menu {
+    position: fixed; /* Mantém o cabeçalho fixo no topo da página */
+    top: 0; /* Alinha o cabeçalho ao topo */
+    left: 0; /* Alinha o cabeçalho à esquerda */
+    width: 100%; /* Define a largura do cabeçalho para 100% da tela */
+    background: rgba(0, 0, 0, 0.8); /* Define um fundo semi-transparente para o cabeçalho */
+    height: 100px; /* Define a altura do cabeçalho */
+    padding: 0; /* Remove o padding padrão */
 }
 
-.menu-container{
-    max-width: 100%;
-    margin:auto;
+/* Contêiner para o menu */
+.menu-container {
+    max-width: 100%; /* Define a largura máxima do contêiner para 100% */
+    margin: auto; /* Centraliza o contêiner */
 }
 
-
-
-.menu-logo img{
-    max-width: 150px;
+/* Estilos para a imagem do logo no cabeçalho */
+.menu-logo img {
+    max-width: 150px; /* Define a largura máxima da imagem do logo */
 }
 
-.menu-nav{
-    float: right;
-    margin-right: 10px;
+/* Estilos para a navegação do menu */
+.menu-nav {
+    float: right; /* Alinha a navegação à direita */
+    margin-right: 10px; /* Adiciona margem à direita da navegação */
 }
 
-.menu-nav li{
-    display: inline-block;
-    padding: 20px 0;
+/* Estilos para os itens da navegação */
+.menu-nav li {
+    display: inline-block; /* Exibe os itens da navegação em linha */
+    padding: 20px 0; /* Adiciona padding vertical aos itens */
 }
 
-.menu-nav a{
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: rgb(228, 228, 228);
-    text-transform: uppercase;
-    transition: .3s;
+/* Estilos para os links da navegação */
+.menu-nav a {
+    display: block; /* Exibe os links como blocos */
+    padding: 10px 20px; /* Adiciona padding aos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: rgb(228, 228, 228); /* Define a cor do texto dos links */
+    text-transform: uppercase; /* Transforma o texto dos links em maiúsculas */
+    transition: .3s; /* Define a duração da transição para efeitos de hover */
 }
 
-.menu-nav a:hover{
-    color: #bfa640;
+/* Estilos para os links da navegação ao passar o mouse */
+.menu-nav a:hover {
+    color: #bfa640; /* Altera a cor do texto dos links ao passar o mouse */
+}
+/* Estilos para o botão de agendamento na navegação */
+.menu-nav .menu-agendamento-btn {
+    background: rgb(187, 216, 136); /* Define a cor de fundo do botão de agendamento */
+    color: #000; /* Define a cor do texto do botão de agendamento */
 }
 
-.menu-nav .menu-agendamento-btn{
-    background: rgb(187, 216, 136);
-    color: #000;
-    
+/* Estilos para o botão de agendamento ao passar o mouse */
+.menu-nav .menu-agendamento-btn:hover {
+    background: rgba(202, 223, 166, 1); /* Altera a cor de fundo do botão ao passar o mouse */
+    color: #000; /* Mantém a cor do texto ao passar o mouse */
 }
 
-
-.menu-nav .menu-agendamento-btn:hover{
-    background: rgba(202, 223, 166, 1);
-    color: #000;
+/* Estilos para o botão de fechar o menu (inicialmente oculto) */
+.menu-nav .closebtn {
+    display: none; /* Oculta o botão de fechar por padrão */
 }
 
-.menu-nav .closebtn{
-    display: none;
+/* Estilos para o botão de abrir o menu (inicialmente oculto) */
+.menu-open {
+    display: none; /* Oculta o botão de abrir o menu por padrão */
 }
 
-.menu-open{
-    display: none;
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .menu-container {
+        max-width: 960px; /* Define a largura máxima do contêiner do menu */
+    }
 }
 
-@media(max-width: 1150px){
-    .menu-container{
-        max-width: 960px;
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .menu-container {
+        max-width: 780px; /* Define a largura máxima do contêiner do menu */
+        margin: auto; /* Centraliza o contêiner */
     }
 
-
-}
-
-@media(max-width:880px){
-    .menu-container{
-        max-width: 780px;
-        margin: auto;
+    /* Estilos para o logo do menu em telas menores */
+    .menu-logo {
+        display: block; /* Exibe o logo como bloco */
+        padding: 0 10px; /* Adiciona padding horizontal ao logo */
+        float: right; /* Alinha o logo à direita */
     }
 
-
-
-    .menu-logo{
-       display: block;
-       padding: 0 10px;
-       float: right;
-    }
-    
+    /* Estilos para a navegação do menu em telas menores */
     .menu-nav {
-        height: 100vh;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: var(--body-navbar);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-
+        height: 100vh; /* Define a altura da navegação para 100% da altura da tela */
+        width: 0; /* Define a largura inicial da navegação como 0 (oculta) */
+        position: fixed; /* Mantém a navegação fixa na tela */
+        z-index: 1; /* Define a camada da navegação para que fique acima de outros elementos */
+        top: 0; /* Alinha a navegação ao topo da tela */
+        left: 0; /* Alinha a navegação à esquerda da tela */
+        background-color: var(--body-navbar); /* Define a cor de fundo da navegação usando a variável */
+        overflow-x: hidden; /* Oculta o conteúdo que transborda horizontalmente */
+        transition: 0.5s; /* Define a duração da transição para a abertura do menu */
+        padding-top: 60px; /* Adiciona padding no topo da navegação */
     }
 
-    .menu-open{
-        display: block;
-        float: left;
-        padding: 0 20px;
-        color: #bfa640;
+    /* Estilos para o botão de abrir o menu em telas menores */
+    .menu-open {
+        display: block; /* Exibe o botão de abrir o menu */
+        float: left; /* Alinha o botão à esquerda */
+        padding: 0 20px; /* Adiciona padding horizontal ao botão */
+        color: #bfa640; /* Define a cor do texto do botão */
     }
 
-    .menu-nav a{
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: var(--link-color);
-        display: block;
-        transition: 0.3s;
-    }
-
-    .menu-nav .closebtn {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
-
-      .menu-nav .menu-agendamento-btn{
-        margin-top: 20px;
-        font-size: 1.25em;
-        width: 100%;
-    }
-
-
-}
-
-
-/* main */
-
-.intro{
-    background: url(img/handsome-man-barbershop-shaving-beard.jpg) no-repeat center;
-    background-size: cover;
-    padding: 300px 0;
-    margin-top: -120px;
-}
-
-.intro-container{
-    text-align: center;
-    margin-right: 49em;
-    text-transform: uppercase;
-}
-
-.intro-container h1{
-    font-size: 2.75em;
-    color: rgb(228, 228, 228);
-}
-
-.intro-container strong{
-    color: #bfa640;
-}
-
-@media(max-width: 1150px){
-
-    .intro-container{
-        margin-right: 39em;
-       
+    /* Estilos para os links da navegação em telas menores */
+    .menu-nav a {
+        padding: 8px 8px 8px 32px; /* Adiciona padding aos links */
+        text-decoration: none; /* Remove o sublinhado dos links */
+        font-size: 25px; /* Define o tamanho da fonte dos links */
+        color: var(--link-color); /* Define a cor do texto dos links usando a variável */
+        display: block; /* Exibe os links como blocos */
+        transition: 0.3s; /* Define a duração da transição para efeitos de hover */
     }
 }
+   /* Estilos para o botão de fechar o menu */
+.menu-nav .closebtn {
+    display: block; /* Exibe o botão de fechar como um bloco */
+    position: absolute; /* Define a posição absoluta para o botão */
+    top: 0; /* Alinha o botão ao topo da navegação */
+    right: 25px; /* Alinha o botão 25 pixels à direita */
+    font-size: 36px; /* Define o tamanho da fonte do botão */
+    margin-left: 50px; /* Adiciona margem à esquerda do botão */
+}
 
-@media(max-width: 880px){
-    
-    .intro-container{
-        margin: auto;
-    }
+/* Estilos para o botão de agendamento na navegação */
+.menu-nav .menu-agendamento-btn {
+    margin-top: 20px; /* Adiciona margem superior ao botão de agendamento */
+    font-size: 1.25em; /* Define o tamanho da fonte do botão de agendamento */
+    width: 100%; /* Define a largura do botão de agendamento para 100% */
+}
 
-    .intro{ 
-        margin-top: -160px;
-        width: 103%;
+/* Estilos para a seção principal (intro) */
+.intro {
+    background: url(img/handsome-man-barbershop-shaving-beard.jpg) no-repeat center; /* Define a imagem de fundo da seção */
+    background-size: cover; /* Faz com que a imagem de fundo cubra toda a seção */
+    padding: 300px 0; /* Adiciona padding vertical de 300 pixels */
+    margin-top: -120px; /* Move a seção para cima, sobrepondo o cabeçalho */
+}
+
+/* Estilos para o contêiner da seção intro */
+.intro-container {
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+    margin-right: 49em; /* Adiciona margem à direita do contêiner */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+}
+
+/* Estilos para os títulos dentro do contêiner intro */
+.intro-container h1 {
+    font-size: 2.75em; /* Define o tamanho da fonte dos títulos */
+    color: rgb(228, 228, 228); /* Define a cor do texto dos títulos */
+}
+
+/* Estilos para o texto em negrito dentro do contêiner intro */
+.intro-container strong {
+    color: #bfa640; /* Define a cor do texto em negrito */
+}
+
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .intro-container {
+        margin-right: 39em; /* Reduz a margem à direita do contêiner em telas menores */
     }
 }
 
-
-/* section historia */
-
-.historia{
-    display: grid;
-}
-
-.historia-container{
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
-}
-
-
-.historia-container h1{
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 2.75em;
-    padding: 60px 0 10px 0;
-    text-transform: uppercase;
-    color: var(--link-color);
-}
-
-.historia-container img{
-    padding: 40px 0;
-    max-width: 520px;
-    border-radius: 6px;
-}
-
-.historia-container p{
-    padding: 40px 0 0 20px;
-    font-size: 1.25em;
-    color: var(--body-color-p);
-}
-
-@media(max-width:1150px){
-    .historia-container{
-        max-width: 960px;
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .intro-container {
+        margin: auto; /* Centraliza o contêiner em telas menores */
     }
 
-    .historia-container img{
-        max-width: 450px;
-    }
-
-    .historia-container p{
-        padding: 0 0 0 20px;
+    .intro { 
+        margin-top: -160px; /* Ajusta a margem superior da seção intro em telas menores */
+        width: 103%; /* Define a largura da seção intro para 103% */
     }
 }
+/* Estilos para a seção "história" */
+.historia {
+    display: grid; /* Define a seção como um grid para layout flexível */
+}
 
-@media(max-width:880px){
+/* Estilos para o contêiner da seção "história" */
+.historia-container {
+    max-width: 1100px; /* Define a largura máxima do contêiner */
+    display: grid; /* Define o contêiner como um grid */
+    grid-template-columns: 1fr 1fr; /* Cria duas colunas de igual largura */
+    margin: auto; /* Centraliza o contêiner na página */
+}
 
-    .historia-container{
-        grid-template-columns: 1fr;
-        margin: auto;
-        text-align: center;
+/* Estilos para o título dentro do contêiner "história" */
+.historia-container h1 {
+    grid-column: 1 / -1; /* Faz o título ocupar ambas as colunas do grid */
+    text-align: center; /* Centraliza o texto do título */
+    font-size: 2.75em; /* Define o tamanho da fonte do título */
+    padding: 60px 0 10px 0; /* Adiciona padding ao redor do título */
+    text-transform: uppercase; /* Transforma o texto do título em maiúsculas */
+    color: var(--link-color); /* Define a cor do título usando a variável */
+}
+
+/* Estilos para a imagem dentro do contêiner "história" */
+.historia-container img {
+    padding: 40px 0; /* Adiciona padding vertical à imagem */
+    max-width: 520px; /* Define a largura máxima da imagem */
+    border-radius: 6px; /* Adiciona bordas arredondadas à imagem */
+}
+
+/* Estilos para o parágrafo dentro do contêiner "história" */
+.historia-container p {
+    padding: 40px 0 0 20px; /* Adiciona padding ao parágrafo */
+    font-size: 1.25em; /* Define o tamanho da fonte do parágrafo */
+    color: var(--body-color-p); /* Define a cor do texto do parágrafo usando a variável */
+}
+
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .historia-container {
+        max-width: 960px; /* Reduz a largura máxima do contêiner em telas menores */
     }
 
-    .historia-container img{
-        max-width: 300px;
-        margin: 40px auto;
+    .historia-container img {
+        max-width: 450px; /* Reduz a largura máxima da imagem em telas menores */
     }
 
-    .historia-container p{
-        max-width: 300px;
-        padding: 0 3px 0 0;
+    .historia-container p {
+        padding: 0 0 0 20px; /* Ajusta o padding do parágrafo em telas menores */
+    }
+}
+
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .historia-container {
+        grid-template-columns: 1fr; /* Muda o layout do grid para uma única coluna */
+        margin: auto; /* Centraliza o contêiner */
+        text-align: center; /* Centraliza o texto dentro do contêiner */
     }
 
+    .historia-container img {
+        max-width: 300px; /* Define a largura máxima da imagem em telas menores */
+        margin: 40px auto; /* Centraliza a imagem com margem vertical */
+    }
+
+    .historia-container p {
+        max-width: 300px; /* Define a largura máxima do parágrafo em telas menores */
+        padding: 0 3px 0 0; /* Ajusta o padding do parágrafo em telas menores */
+    }
+}
+/* Estilos para a seção "serviço" */
+.servico {
+    background-color: var(--bady-bg-sec); /* Define a cor de fundo da seção usando a variável */
+    margin: 60px auto; /* Adiciona margem vertical de 60 pixels e centraliza horizontalmente */
+    padding: 0 0 40px 0; /* Adiciona padding inferior de 40 pixels */
 }
 
-
-/* section serviço */
-
-.servico{
-    background-color: var(--bady-bg-sec);
-    margin: 60px auto;
-    padding: 0 0 40px 0;
+/* Estilos para o contêiner da seção "serviço" */
+.servico-container {
+    max-width: 1100px; /* Define a largura máxima do contêiner */
+    display: grid; /* Define o contêiner como um grid */
+    grid-template-columns: 1fr 1fr; /* Cria duas colunas de igual largura */
+    margin: auto; /* Centraliza o contêiner na página */
 }
 
-.servico-container{
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
+/* Estilos para o título dentro do contêiner "serviço" */
+.servico-container h1 {
+    grid-column: 1 / -1; /* Faz o título ocupar ambas as colunas do grid */
+    text-align: center; /* Centraliza o texto do título */
+    font-size: 2.75em; /* Define o tamanho da fonte do título */
+    padding: 60px 0 10px 0; /* Adiciona padding ao redor do título */
+    text-transform: uppercase; /* Transforma o texto do título em maiúsculas */
+    color: var(--link-color); /* Define a cor do título usando a variável */
 }
 
-.servico-container h1{
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 2.75em;
-    padding: 60px 0 10px 0;
-    text-transform: uppercase;
-    color: var(--link-color);
+/* Estilos para os parágrafos dentro do contêiner "serviço" */
+.servico-container p {
+    grid-column: 1 / -1; /* Faz o parágrafo ocupar ambas as colunas do grid */
+    text-align: center; /* Centraliza o texto do parágrafo */
+    color: #bfa640; /* Define a cor do texto do parágrafo */
+    font-size: 1.25em; /* Define o tamanho da fonte do parágrafo */
 }
 
-.servico-container p{
-    grid-column: 1 / -1;
-    text-align: center;
-    color: #bfa640;
-    font-size: 1.25em;
+/* Estilos para a tabela de serviços */
+.tabela {
+    grid-column: 1 / -1; /* Faz a tabela ocupar ambas as colunas do grid */
+    display: grid; /* Define a tabela como um grid */
+    grid-template-columns: 1fr 1fr; /* Cria duas colunas de igual largura na tabela */
+    margin: 40px auto; /* Adiciona margem vertical de 40 pixels e centraliza horizontalmente */
+    background-color: var(--body-gb); /* Define a cor de fundo da tabela usando a variável */
+    border-radius: 6px; /* Adiciona bordas arredondadas à tabela */
+    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308); /* Adiciona sombra à tabela */
 }
 
-.tabela{
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 40px auto;
-    background-color: var(--body-gb);
-    border-radius: 6px;
-    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308);
-}
-
+/* Estilos para a tabela em modo escuro */
 .dark-mode .tabela {
-    background-color:#474b4e;
-    
+    background-color: #474b4e; /* Altera a cor de fundo da tabela em modo escuro */
 }
 
-.dark-mode .tabela p{
-    background-color: #474b4e;
-    color: #f2f2f2;
+/* Estilos para os parágrafos dentro da tabela em modo escuro */
+.dark-mode .tabela p {
+    background-color: #474b4e; /* Altera a cor de fundo dos parágrafos na tabela em modo escuro */
+    color: #f2f2f2; /* Altera a cor do texto dos parágrafos na tabela em modo escuro */
 }
 
-.tabela1{
-    padding: 40px;
+/* Estilos para as células da tabela */
+.tabela1 {
+    padding: 40px; /* Adiciona padding às células da tabela */
 }
 
-.tabela1 p{
-    padding: 10px 60px;
+/* Estilos para os parágrafos dentro das células da tabela */
+.tabela1 p {
+    padding: 10px 60px; /* Adiciona padding aos parágrafos dentro das células */
 }
 
-.tabela1 strong{
-    color: var(--body-color-p);
+/* Estilos para o texto em negrito dentro das células da tabela */
+.tabela1 strong {
+    color: var(--body-color-p); /* Define a cor do texto em negrito usando a variável */
 }
 
-@media(max-width:1150px){
-    .servico-container{
-        max-width: 960px;
-    }
-
-    .tabela1 p{
-        padding: 10px 0;
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .servico-container {
+        max-width: 960px; /* Reduz a largura máxima do contêiner em telas menores */
     }
 }
+    /* Estilos para os parágrafos dentro das células da tabela */
+.tabela1 p {
+    padding: 10px 0; /* Adiciona padding vertical aos parágrafos dentro das células */
+}
 
-@media(max-width:880px){
-
-    .servico{
-        width: 102%;
-    }
-    
-    .servico-container{
-        grid-template-columns: 1fr;
-    }
-
-    .servico-container p{
-        max-width: 300px;
-        margin: auto;
-        text-align: center;
-    }
-
-    .tabela{
-        display: inline;
-        
-    }
-
-    .tabela1{
-        padding: 0 20px;
-       
-    }
-
-    .tabela1 p{
-        font-size: 1.0em;
-        padding: 20px 0;
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .servico {
+        width: 102%; /* Define a largura da seção "serviço" para 102% em telas menores */
     }
     
-}
-
-
-/* section agendameto */
-
-.agendamento{
-    max-width: 1100px;
-    margin: auto;
-}
-
-.agendamento-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
-}
-
-.agendamento-container iframe{
-    padding: 40px 60px 60px 0;
-}
-
-.agendamento-item{
-    padding: 40px 0;
-}
-
-.agendamento-item h1{
-    font-size: 2.75em;
-    text-transform: uppercase;
-    color: var(--link-color);
-}
-
-.agendamento-item p{
-    font-size: 1.25em;
-    padding: 20px 0 80px 0;
-    color: #bfa640;
-}
-
-.agendamento-item a{
-    font-size: 1.55em;
-    padding: 20px 85px;
-    background: rgb(187, 216, 136);
-    text-transform: uppercase;
-    color: #fff;
-    transition: .3s;
-}
-
-.agendamento-item a:hover{
-    background: rgba(202, 223, 166, 1);
-}
-
-.fab{
-    padding: 0 10px 0 0;
-}
-
-@media(max-width:1150px){
-    .agendamento{
-        max-width: 960px;
-    }
-    
-    .agendamento-item a{
-        padding: 20px 15px;
-    }
-}
-
-@media(max-width:880px){
-
-    .agendamento{
-        max-width: 600px;
-        margin: auto;
-        text-align: center;
+    .servico-container {
+        grid-template-columns: 1fr; /* Muda o layout do grid para uma única coluna */
     }
 
-    .agendamento-container{ 
-        display: block;
-        grid-template-columns: 1fr;
-    }
-
-    .agendamento-container iframe{
-        max-width: 300px;
-        padding:0;
-        margin: auto;
-    }
-
-    .agendamento-item{
-        justify-content: center;
-        padding: 40px 0;
-    }
-
-    .agendamento-item h1{
-        font-size: 2em;
-        color: var(--link-color);
-    }
-
-    .agendamento-item p{
-        font-size: 1.10em;
-        
-        margin: auto;
-    }
-
-    .agendamento-item a{
-        padding: 15px 20px;
-        font-size: 1.25em;
-    }
-    
-
-}
-
-/* section formulario */
-
-form{
-    display: grid;
-    justify-content: center;
-    gap: 20px;
-}
-
-.formulario-container{
-    background-color: var(--body-gb);
-    color: var(--body-color);
-}
-
-
-.dark-mode .formulario-container {
-    background-color:#474b4e;
-    
-}
-
-.dark-mode .formulario-container h1{
-    background-color: #474b4e;
-    color: #f2f2f2;
-}
-
-/* Bootstrap Classes customizadas para formatação */
-.formulario-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.formulario h1 {
-    text-align: center;
-    color: #333;
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
-.form-control, .form-select {
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 1.1em;
-    border: 1px solid #ddd;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: #8e44ad;
-    box-shadow: 0 0 8px rgba(142, 68, 173, 0.3);
-}
-
-.invalid-feedback {
-    color: #e74c3c;
-    font-size: 0.9em;
-}
-
-button[type="submit"] {
-    background-color: #8e44ad;
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    font-size: 1.2em;
-}
-
-button[type="submit"]:hover {
-    background-color: #9b59b6;
-}
-
-@media (max-width: 768px) {
-    .formulario-container {
-        width: 90%;
-    }
-}
-/* Estilo para o formulário e mensagens de erro */
-.form-control:invalid {
-    border-color: #e74c3c; /* Cor vermelha para campos inválidos */
-}
-
-.form-control:invalid + .invalid-feedback {
-    display: block;
-}
-
-/* Estilo para os campos válidos, caso queira destacar */
-.form-control:valid {
-    border-color: #2ecc71; /* Verde para campos válidos */
-}
-
-/* Melhorar a visibilidade da mensagem de erro */
-.invalid-feedback {
-    display: none; /* Esconde inicialmente */
-    color: #e74c3c;
-    font-size: 0.875rem;
-}
-
-/* Mostrar a mensagem de erro quando o campo for inválido */
-.form-control:invalid ~ .invalid-feedback {
-    display: block;
-}
-
-button[type="submit"]:invalid {
-    background-color: #f44336; /* Cor do botão em caso de erro */
-}
-
-
-/* footer */
-
-.footer{
-    margin: 60px 0 0 0 ;
-    background: black;
-    color: blanchedalmond;
-}
-
-.footer-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: auto;
-    max-width: 1200px;
-}
-
-.footer-container img{
-    grid-column: 1 / -1;
-    margin: auto;
-    max-width: 160px;
-    padding: 60px 0 40px 0;
-    align-items: center;
-}
-
-.footer-item{
-    margin: 40px auto;
-    text-align: center;
-}
-
-.footer-item h1{
-    font-size: 2.45em;
-    padding: 0 0 20px 0;
-    color: var(--body-color-footer);
-    text-transform: uppercase;
-}
-
-.footer-item p,a{
-    color: #bfa640;
-    font-size: 1.25em;
-    padding: 0 0 40px 0;
-}
-
-.footer-social{
-    margin: 40px auto;
-    text-align: center;
-}
-
-.footer-social h1{
-    font-size: 2.45em;
-    padding: 0 0 20px 0;
-    color: var(--body-color-footer);
-    text-transform: uppercase;
-}
-
-.footer-social li{
-    display: inline-block;
-}
-
-.criador::before{
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #fff;
-}
-
-.criador{
-    display: grid;
-    background: #000000;
-    color: var(--body-color-footer);
-}
-
-.criador p{
-    grid-column: 1 / -1;
-    margin: auto;
-    padding: 40px 0;
-}
-
-.criador strong{
-    color: #bfa640;
-}
-
-@media(max-width:1150px){
-    .footer-container{
-        max-width: 960px;
-    }
-}
-
-@media(max-width:880px){
-
-    .footer{
-        width: 103%;
-    }
-    .footer-container{
-        grid-template-columns: 1fr;
-    }
-
-    .criador{
-        width: 103%;
-    }
-}
-/* Responsividade básica */
-@media (max-width: 768px) {
-    .formulario-container {
-        max-width: 90%;
-        margin: auto;
+    .servico-container p {
+        max-width: 300px; /* Define a largura máxima dos parágrafos em telas menores */
+        margin: auto; /* Centraliza os parágrafos */
+        text-align: center; /* Centraliza o texto dos parágrafos */
     }
 
     .tabela {
-        grid-template-columns: 1fr;
+        display: inline; /* Altera a exibição da tabela para inline em telas menores */
+    }
+
+    .tabela1 {
+        padding: 0 20px; /* Adiciona padding horizontal às células da tabela */
+    }
+
+    .tabela1 p {
+        font-size: 1.0em; /* Define o tamanho da fonte dos parágrafos dentro das células */
+        padding: 20px 0; /* Adiciona padding vertical aos parágrafos dentro das células */
+    }
+}
+
+/* Estilos para a seção "agendamento" */
+.agendamento {
+    max-width: 1100px; /* Define a largura máxima da seção "agendamento" */
+    margin: auto; /* Centraliza a seção "agendamento" na página */
+}
+
+/* Estilos para o contêiner da seção "agendamento" */
+.agendamento-container {
+    display: grid; /* Define o contêiner como um grid */
+    grid-template-columns: 1fr 1fr; /* Cria duas colunas de igual largura */
+    margin: auto; /* Centraliza o contêiner na página */
+}
+
+/* Estilos para o iframe dentro do contêiner "agendamento" */
+.agendamento-container iframe {
+    padding: 40px 60px 60px 0; /* Adiciona padding ao iframe */
+}
+
+/* Estilos para os itens dentro da seção "agendamento" */
+.agendamento-item {
+    padding: 40px 0; /* Adiciona padding vertical aos itens de agendamento */
+}
+
+/* Estilos para o título dentro dos itens de agendamento */
+.agendamento-item h1 {
+    font-size: 2.75em; /* Define o tamanho da fonte do título */
+    text-transform: uppercase; /* Transforma o texto do título em maiúsculas */
+    color: var(--link-color); /* Define a cor do título usando a variável */
+}
+/* Estilos para os parágrafos dentro dos itens de agendamento */
+.agendamento-item p {
+    font-size: 1.25em; /* Define o tamanho da fonte dos parágrafos */
+    padding: 20px 0 80px 0; /* Adiciona padding vertical aos parágrafos */
+    color: #bfa640; /* Define a cor do texto dos parágrafos */
+}
+
+/* Estilos para os links dentro dos itens de agendamento */
+.agendamento-item a {
+    font-size: 1.55em; /* Define o tamanho da fonte dos links */
+    padding: 20px 85px; /* Adiciona padding aos links */
+    background: rgb(187, 216, 136); /* Define a cor de fundo dos links */
+    text-transform: uppercase; /* Transforma o texto dos links em maiúsculas */
+    color: #fff; /* Define a cor do texto dos links */
+    transition: .3s; /* Define a duração da transição para efeitos de hover */
+}
+
+/* Estilos para os links ao passar o mouse */
+.agendamento-item a:hover {
+    background: rgba(202, 223, 166, 1); /* Altera a cor de fundo dos links ao passar o mouse */
+}
+
+/* Estilos para o ícone de ação flutuante (FAB) */
+.fab {
+    padding: 0 10px 0 0; /* Adiciona padding à direita do ícone */
+}
+
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .agendamento {
+        max-width: 960px; /* Reduz a largura máxima da seção "agendamento" em telas menores */
+    }
+    
+    .agendamento-item a {
+        padding: 20px 15px; /* Ajusta o padding dos links em telas menores */
+    }
+}
+
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .agendamento {
+        max-width: 600px; /* Define a largura máxima da seção "agendamento" em telas menores */
+        margin: auto; /* Centraliza a seção "agendamento" na página */
+        text-align: center; /* Centraliza o texto dentro da seção "agendamento" */
+    }
+
+    .agendamento-container { 
+        display: block; /* Altera o contêiner para exibição em bloco */
+        grid-template-columns: 1fr; /* Muda o layout do grid para uma única coluna */
+    }
+
+    .agendamento-container iframe {
+        max-width: 300px; /* Define a largura máxima do iframe em telas menores */
+        padding: 0; /* Remove o padding do iframe */
+        margin: auto; /* Centraliza o iframe */
+    }
+
+    .agendamento-item {
+        justify-content: center; /* Centraliza o conteúdo dos itens de agendamento */
+        padding: 40px 0; /* Adiciona padding vertical aos itens de agendamento */
+    }
+
+    .agendamento-item h1 {
+        font-size: 2em; /* Reduz o tamanho da fonte do título em telas menores */
+        color: var(--link-color); /* Define a cor do título usando a variável */
+    }
+
+    .agendamento-item p {
+        font-size: 1.10em; /* Reduz o tamanho da fonte dos parágrafos em telas menores */
+        margin: auto; /* Centraliza os parágrafos */
+    }
+}
+   /* Estilos para os links dentro dos itens de agendamento */
+.agendamento-item a {
+    padding: 15px 20px; /* Adiciona padding aos links */
+    font-size: 1.25em; /* Define o tamanho da fonte dos links */
+}
+
+/* Estilos para o formulário */
+form {
+    display: grid; /* Define o formulário como um grid para layout flexível */
+    justify-content: center; /* Centraliza o conteúdo do formulário */
+    gap: 20px; /* Define o espaço entre os elementos do formulário */
+}
+
+/* Estilos para o contêiner do formulário */
+.formulario-container {
+    background-color: var(--body-gb); /* Define a cor de fundo do contêiner usando a variável */
+    color: var(--body-color); /* Define a cor do texto do contêiner usando a variável */
+}
+
+/* Estilos para o contêiner do formulário em modo escuro */
+.dark-mode .formulario-container {
+    background-color: #474b4e; /* Altera a cor de fundo do contêiner em modo escuro */
+}
+
+/* Estilos para o título dentro do contêiner do formulário em modo escuro */
+.dark-mode .formulario-container h1 {
+    background-color: #474b4e; /* Altera a cor de fundo do título em modo escuro */
+    color: #f2f2f2; /* Altera a cor do texto do título em modo escuro */
+}
+
+/* Estilos para o contêiner do formulário */
+.formulario-container {
+    max-width: 600px; /* Define a largura máxima do contêiner do formulário */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 30px; /* Adiciona padding ao contêiner */
+    background-color: #fff; /* Define a cor de fundo do contêiner como branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao contêiner */
+    border-radius: 10px; /* Adiciona bordas arredondadas ao contêiner */
+}
+
+/* Estilos para o título dentro do formulário */
+.formulario h1 {
+    text-align: center; /* Centraliza o texto do título */
+    color: #333; /* Define a cor do texto do título */
+    font-size: 2em; /* Define o tamanho da fonte do título */
+    margin-bottom: 30px; /* Adiciona margem inferior ao título */
+}
+
+/* Estilos para os campos de entrada e seleção do formulário */
+.form-control, .form-select {
+    border-radius: 5px; /* Adiciona bordas arredondadas aos campos */
+    padding: 12px; /* Adiciona padding aos campos */
+    font-size: 1.1em; /* Define o tamanho da fonte dos campos */
+    border: 1px solid #ddd; /* Define a borda dos campos */
+}
+
+/* Estilos para os campos de entrada e seleção ao receber foco */
+.form-control:focus, .form-select:focus {
+    border-color: #8e44ad; /* Altera a cor da borda ao receber foco */
+    box-shadow: 0 0 8px rgba(142, 68, 173, 0.3); /* Adiciona sombra ao campo ao receber foco */
+}
+
+/* Estilos para mensagens de feedback de erro */
+.invalid-feedback {
+    color: #e74c3c; /* Define a cor do texto de feedback de erro */
+    font-size: 0.9em; /* Define o tamanho da fonte do feedback de erro */
+}
+/* Estilos para o botão de envio do formulário */
+button[type="submit"] {
+    background-color: #8e44ad; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    padding: 12px 20px; /* Adiciona padding ao botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+    transition: background-color 0.3s ease; /* Define a transição suave para a cor de fundo */
+    width: 100%; /* Define a largura do botão para 100% do contêiner */
+    font-size: 1.2em; /* Define o tamanho da fonte do botão */
+}
+
+/* Estilos para o botão de envio ao passar o mouse */
+button[type="submit"]:hover {
+    background-color: #9b59b6; /* Altera a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilos responsivos para telas com largura máxima de 768px */
+@media (max-width: 768px) {
+    .formulario-container {
+        width: 90%; /* Define a largura do contêiner do formulário para 90% em telas menores */
+    }
+}
+
+/* Estilo para campos de entrada inválidos */
+.form-control:invalid {
+    border-color: #e74c3c; /* Define a cor da borda como vermelha para campos inválidos */
+}
+
+/* Exibe a mensagem de feedback de erro quando o campo é inválido */
+.form-control:invalid + .invalid-feedback {
+    display: block; /* Mostra a mensagem de erro */
+}
+
+/* Estilo para campos de entrada válidos */
+.form-control:valid {
+    border-color: #2ecc71; /* Define a cor da borda como verde para campos válidos */
+}
+
+/* Estilo para mensagens de erro */
+.invalid-feedback {
+    display: none; /* Esconde a mensagem de erro inicialmente */
+    color: #e74c3c; /* Define a cor do texto da mensagem de erro */
+    font-size: 0.875rem; /* Define o tamanho da fonte da mensagem de erro */
+}
+
+/* Mostra a mensagem de erro quando o campo é inválido */
+.form-control:invalid ~ .invalid-feedback {
+    display: block; /* Exibe a mensagem de erro */
+}
+
+/* Estilo para o botão de envio em caso de erro */
+button[type="submit"]:invalid {
+    background-color: #f44336; /* Altera a cor do botão para vermelho em caso de erro */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    margin: 60px 0 0 0; /* Adiciona margem superior ao rodapé */
+    background: black; /* Define a cor de fundo do rodapé como preto */
+    color: blanchedalmond; /* Define a cor do texto do rodapé */
+}
+
+/* Estilos para o contêiner do rodapé */
+.footer-container {
+    display: grid; /* Define o contêiner como um grid */
+    grid-template-columns: 1fr 1fr 1fr; /* Cria três colunas de igual largura */
+    margin: auto; /* Centraliza o contêiner na página */
+    max-width: 1200px; /* Define a largura máxima do contêiner do rodapé */
+}
+
+/* Estilos para as imagens dentro do contêiner do rodapé */
+.footer-container img {
+    grid-column: 1 / -1; /* Faz a imagem ocupar todas as colunas do grid */
+    margin: auto; /* Centraliza a imagem */
+    max-width: 160px; /* Define a largura máxima da imagem */
+    padding: 60px 0 40px 0; /* Adiciona padding vertical à imagem */
+    align-items: center; /* Alinha a imagem ao centro */
+}
+/* Estilos para os itens do rodapé */
+.footer-item {
+    margin: 40px auto; /* Adiciona margem vertical de 40 pixels e centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto dentro do item do rodapé */
+}
+
+/* Estilos para os títulos dentro dos itens do rodapé */
+.footer-item h1 {
+    font-size: 2.45em; /* Define o tamanho da fonte do título */
+    padding: 0 0 20px 0; /* Adiciona padding inferior ao título */
+    color: var(--body-color-footer); /* Define a cor do título usando a variável */
+    text-transform: uppercase; /* Transforma o texto do título em maiúsculas */
+}
+
+/* Estilos para os parágrafos e links dentro dos itens do rodapé */
+.footer-item p, a {
+    color: #bfa640; /* Define a cor do texto dos parágrafos e links */
+    font-size: 1.25em; /* Define o tamanho da fonte dos parágrafos e links */
+    padding: 0 0 40px 0; /* Adiciona padding inferior aos parágrafos e links */
+}
+
+/* Estilos para a seção de redes sociais do rodapé */
+.footer-social {
+    margin: 40px auto; /* Adiciona margem vertical de 40 pixels e centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto dentro da seção de redes sociais */
+}
+
+/* Estilos para os títulos dentro da seção de redes sociais */
+.footer-social h1 {
+    font-size: 2.45em; /* Define o tamanho da fonte do título */
+    padding: 0 0 20px 0; /* Adiciona padding inferior ao título */
+    color: var(--body-color-footer); /* Define a cor do título usando a variável */
+    text-transform: uppercase; /* Transforma o texto do título em maiúsculas */
+}
+
+/* Estilos para os itens da lista de redes sociais */
+.footer-social li {
+    display: inline-block; /* Exibe os itens da lista em linha */
+}
+
+/* Estilos para a seção do criador */
+.criador::before {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    width: 100%; /* Define a largura do pseudo-elemento para 100% */
+    height: 2px; /* Define a altura do pseudo-elemento */
+    background: #fff; /* Define a cor de fundo do pseudo-elemento como branco */
+}
+
+.criador {
+    display: grid; /* Define a seção do criador como um grid */
+    background: #000000; /* Define a cor de fundo da seção como preto */
+    color: var(--body-color-footer); /* Define a cor do texto usando a variável */
+}
+
+/* Estilos para os parágrafos dentro da seção do criador */
+.criador p {
+    grid-column: 1 / -1; /* Faz o parágrafo ocupar todas as colunas do grid */
+    margin: auto; /* Centraliza o parágrafo */
+    padding: 40px 0; /* Adiciona padding vertical ao parágrafo */
+}
+
+/* Estilos para o texto em negrito dentro da seção do criador */
+.criador strong {
+    color: #bfa640; /* Define a cor do texto em negrito */
+}
+
+/* Estilos responsivos para telas com largura máxima de 1150px */
+@media(max-width: 1150px) {
+    .footer-container {
+        max-width: 960px; /* Reduz a largura máxima do contêiner do rodapé em telas menores */
+    }
+}
+/* Estilos responsivos para telas com largura máxima de 880px */
+@media(max-width: 880px) {
+    .footer {
+        width: 103%; /* Define a largura do rodapé para 103% em telas menores */
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Muda o layout do grid do contêiner do rodapé para uma única coluna */
+    }
+
+    .criador {
+        width: 103%; /* Define a largura da seção do criador para 103% em telas menores */
+    }
+}
+
+/* Responsividade básica para telas com largura máxima de 768px */
+@media (max-width: 768px) {
+    .formulario-container {
+        max-width: 90%; /* Define a largura máxima do contêiner do formulário para 90% em telas menores */
+        margin: auto; /* Centraliza o contêiner do formulário */
+    }
+
+    .tabela {
+        grid-template-columns: 1fr; /* Muda o layout do grid da tabela para uma única coluna */
     }
 
     .historia-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Muda o layout do grid da seção "história" para uma única coluna */
     }
 
     .servico-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Muda o layout do grid da seção "serviço" para uma única coluna */
     }
 }
