@@ -1,0 +1,778 @@
+/*variáveis Dark Mode*/
+:root{
+    --body-gb: #fafafa;
+    --bg-dark-mode: #d3d2d2;
+    --btn-dark-mode:#292929;
+    --body-navbar:  #f2f2f2;
+    --bady-bg-sec:rgba(160, 160, 160, 0.103);
+    --body-color:#555;
+    --body-color-p:#252525;
+    --body-color-footer: #fff;
+    --link-color: #222;
+    --link-color-hover:rgba(202, 223, 166, 1);
+}
+
+
+.dark-mode:root{
+    --body-gb: #292929;
+    --bg-dark-mode: #292929;
+    --btn-dark-mode:#bfa640;
+    --body-navbar:  #1f1f1f;
+    --bady-bg-sec:rgb(26, 26, 26);
+    --body-color:rgb(180, 180, 180);
+    --body-color-p:#dddddd;
+    --body-color-footer: #fff;
+    --link-color: rgb(223, 221, 221);
+    --link-color-hover:rgba(202, 223, 166, 1);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition-property: background-color;
+    transition-duration: 1s;
+    
+}
+
+body{
+    padding-top: 100px;
+    background-color: var(--body-gb);
+}
+
+
+
+/*button Dark Mode*/
+
+.dark-mode-container{
+    margin: 0 0 0 20px;
+}
+
+#switch{
+    position: relative;
+    width: 50px;
+}
+
+#switch::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 25px;
+    background: var(--bg-dark-mode);
+    border-radius: 20px;
+}
+
+#switch:checked:before{
+    background: #555;
+}
+
+#switch::after{
+    content: '🌙';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--btn-dark-mode);
+    border-radius: 20px;
+    transition: .25s;
+    border: 3px solid var(--btn-dark-mode);
+    box-sizing: border-box;
+}
+#switch:checked::after{
+    left: 25px;
+}
+
+@media(max-width:880px){
+    #switch{
+        margin: 20px 40px;
+        
+    }
+}
+
+
+
+/* header */
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    height: 100px;
+    padding: 0;
+}
+
+.menu-container{
+    max-width: 100%;
+    margin:auto;
+}
+
+
+
+.menu-logo img{
+    max-width: 150px;
+}
+
+.menu-nav{
+    float: right;
+    margin-right: 10px;
+}
+
+.menu-nav li{
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.menu-nav a{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.menu-nav a:hover{
+    color: #bfa640;
+}
+
+.menu-nav .menu-agendamento-btn{
+    background: rgb(187, 216, 136);
+    color: #000;
+    
+}
+
+
+.menu-nav .menu-agendamento-btn:hover{
+    background: rgba(202, 223, 166, 1);
+    color: #000;
+}
+
+.menu-nav .closebtn{
+    display: none;
+}
+
+.menu-open{
+    display: none;
+}
+
+@media(max-width: 1150px){
+    .menu-container{
+        max-width: 960px;
+    }
+
+
+}
+
+@media(max-width:880px){
+    .menu-container{
+        max-width: 780px;
+        margin: auto;
+    }
+
+
+
+    .menu-logo{
+       display: block;
+       padding: 0 10px;
+       float: right;
+    }
+    
+    .menu-nav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--body-navbar);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+
+    }
+
+    .menu-open{
+        display: block;
+        float: left;
+        padding: 0 20px;
+        color: #bfa640;
+    }
+
+    .menu-nav a{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: var(--link-color);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .menu-nav .closebtn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .menu-nav .menu-agendamento-btn{
+        margin-top: 20px;
+        font-size: 1.25em;
+        width: 100%;
+    }
+
+
+}
+
+
+/* main */
+
+.intro{
+    background: url(img/handsome-man-barbershop-shaving-beard.jpg) no-repeat center;
+    background-size: cover;
+    padding: 300px 0;
+    margin-top: -185px;
+}
+
+.intro-container{
+    text-align: center;
+    margin-right: 49em;
+    text-transform: uppercase;
+}
+
+.intro-container h1{
+    font-size: 2.75em;
+    color: rgb(228, 228, 228);
+}
+
+.intro-container strong{
+    color: #bfa640;
+}
+
+@media(max-width: 1150px){
+
+    .intro-container{
+        margin-right: 39em;
+       
+    }
+}
+
+@media(max-width: 880px){
+    
+    .intro-container{
+        margin: auto;
+    }
+
+    .intro{ 
+        margin-top: -260px;
+        width: 103%;
+    }
+}
+
+
+/* section historia */
+
+.historia{
+    display: grid;
+}
+
+.historia-container{
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+
+.historia-container h1{
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.75em;
+    padding: 60px 0 10px 0;
+    text-transform: uppercase;
+    color: var(--link-color);
+}
+
+.historia-container img{
+    padding: 40px 0;
+    max-width: 520px;
+    border-radius: 6px;
+}
+
+.historia-container p{
+    padding: 40px 0 0 20px;
+    font-size: 1.25em;
+    color: var(--body-color-p);
+}
+
+@media(max-width:1150px){
+    .historia-container{
+        max-width: 960px;
+    }
+
+    .historia-container img{
+        max-width: 450px;
+    }
+
+    .historia-container p{
+        padding: 0 0 0 20px;
+    }
+}
+
+@media(max-width:880px){
+
+    .historia-container{
+        grid-template-columns: 1fr;
+        margin: auto;
+        text-align: center;
+    }
+
+    .historia-container img{
+        max-width: 300px;
+        margin: 40px auto;
+    }
+
+    .historia-container p{
+        max-width: 300px;
+        padding: 0 3px 0 0;
+    }
+
+}
+
+
+/* section serviço */
+
+.servico{
+    background-color: var(--bady-bg-sec);
+    margin: 60px auto;
+    padding: 0 0 40px 0;
+}
+
+.servico-container{
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+.servico-container h1{
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.75em;
+    padding: 60px 0 10px 0;
+    text-transform: uppercase;
+    color: var(--link-color);
+}
+
+.servico-container p{
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #bfa640;
+    font-size: 1.25em;
+}
+
+.tabela{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px auto;
+    background-color: var(--body-gb);
+    border-radius: 6px;
+    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308);
+}
+
+.tabela1{
+    padding: 40px;
+}
+
+.tabela1 p{
+    padding: 10px 60px;
+}
+
+.tabela1 strong{
+    color: var(--body-color-p);
+}
+
+@media(max-width:1150px){
+    .servico-container{
+        max-width: 960px;
+    }
+
+    .tabela1 p{
+        padding: 10px 0;
+    }
+}
+
+@media(max-width:880px){
+
+    .servico{
+        width: 102%;
+    }
+    
+    .servico-container{
+        grid-template-columns: 1fr;
+    }
+
+    .servico-container p{
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .tabela{
+        display: inline;
+        
+    }
+
+    .tabela1{
+        padding: 0 20px;
+       
+    }
+
+    .tabela1 p{
+        font-size: 1.0em;
+        padding: 20px 0;
+    }
+    
+}
+
+
+/* section agendameto */
+
+.agendamento{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.agendamento-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+.agendamento-container iframe{
+    padding: 40px 60px 60px 0;
+}
+
+.agendamento-item{
+    padding: 40px 0;
+}
+
+.agendamento-item h1{
+    font-size: 2.75em;
+    text-transform: uppercase;
+    color: var(--link-color);
+}
+
+.agendamento-item p{
+    font-size: 1.25em;
+    padding: 20px 0 80px 0;
+    color: #bfa640;
+}
+
+.agendamento-item a{
+    font-size: 1.55em;
+    padding: 20px 85px;
+    background: rgb(187, 216, 136);
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s;
+}
+
+.agendamento-item a:hover{
+    background: rgba(202, 223, 166, 1);
+}
+
+.fab{
+    padding: 0 10px 0 0;
+}
+
+@media(max-width:1150px){
+    .agendamento{
+        max-width: 960px;
+    }
+    
+    .agendamento-item a{
+        padding: 20px 15px;
+    }
+}
+
+@media(max-width:880px){
+
+    .agendamento{
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .agendamento-container{ 
+        display: block;
+        grid-template-columns: 1fr;
+    }
+
+    .agendamento-container iframe{
+        max-width: 300px;
+        padding:0;
+        margin: auto;
+    }
+
+    .agendamento-item{
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .agendamento-item h1{
+        font-size: 2em;
+        color: var(--link-color);
+    }
+
+    .agendamento-item p{
+        font-size: 1.10em;
+        
+        margin: auto;
+    }
+
+    .agendamento-item a{
+        padding: 15px 20px;
+        font-size: 1.25em;
+    }
+    
+
+}
+
+/* section formulario */
+
+form{
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formulario-container{
+    background-color: var(--body-gb);
+    color: var(--body-color);
+}
+
+
+.dark-mode .formulario-container {
+    background-color: #222;
+    
+}
+
+.dark-mode .formulario-container h1{
+    background-color: #222;
+    color: #f2f2f2;
+}
+
+/* Bootstrap Classes customizadas para formatação */
+.formulario-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.formulario h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 8px rgba(142, 68, 173, 0.3);
+}
+
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 0.9em;
+}
+
+button[type="submit"] {
+    background-color: #8e44ad;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+button[type="submit"]:hover {
+    background-color: #9b59b6;
+}
+
+@media (max-width: 768px) {
+    .formulario-container {
+        width: 90%;
+    }
+}
+/* Estilo para o formulário e mensagens de erro */
+.form-control:invalid {
+    border-color: #e74c3c; /* Cor vermelha para campos inválidos */
+}
+
+.form-control:invalid + .invalid-feedback {
+    display: block;
+}
+
+/* Estilo para os campos válidos, caso queira destacar */
+.form-control:valid {
+    border-color: #2ecc71; /* Verde para campos válidos */
+}
+
+/* Melhorar a visibilidade da mensagem de erro */
+.invalid-feedback {
+    display: none; /* Esconde inicialmente */
+    color: #e74c3c;
+    font-size: 0.875rem;
+}
+
+/* Mostrar a mensagem de erro quando o campo for inválido */
+.form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+button[type="submit"]:invalid {
+    background-color: #f44336; /* Cor do botão em caso de erro */
+}
+
+
+/* footer */
+
+.footer{
+    margin: 60px 0 0 0 ;
+    background: black;
+    color: blanchedalmond;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.footer-container img{
+    grid-column: 1 / -1;
+    margin: auto;
+    max-width: 160px;
+    padding: 60px 0 40px 0;
+    align-items: center;
+}
+
+.footer-item{
+    margin: 40px auto;
+    text-align: center;
+}
+
+.footer-item h1{
+    font-size: 2.45em;
+    padding: 0 0 20px 0;
+    color: var(--body-color-footer);
+    text-transform: uppercase;
+}
+
+.footer-item p,a{
+    color: #bfa640;
+    font-size: 1.25em;
+    padding: 0 0 40px 0;
+}
+
+.footer-social{
+    margin: 40px auto;
+    text-align: center;
+}
+
+.footer-social h1{
+    font-size: 2.45em;
+    padding: 0 0 20px 0;
+    color: var(--body-color-footer);
+    text-transform: uppercase;
+}
+
+.footer-social li{
+    display: inline-block;
+}
+
+.criador::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+.criador{
+    display: grid;
+    background: #000000;
+    color: var(--body-color-footer);
+}
+
+.criador p{
+    grid-column: 1 / -1;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.criador strong{
+    color: #bfa640;
+}
+
+@media(max-width:1150px){
+    .footer-container{
+        max-width: 960px;
+    }
+}
+
+@media(max-width:880px){
+
+    .footer{
+        width: 103%;
+    }
+    .footer-container{
+        grid-template-columns: 1fr;
+    }
+
+    .criador{
+        width: 103%;
+    }
+}
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .formulario-container {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .tabela {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-container {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
