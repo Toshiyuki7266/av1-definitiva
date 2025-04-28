@@ -236,7 +236,7 @@ body{
     background: url(img/handsome-man-barbershop-shaving-beard.jpg) no-repeat center;
     background-size: cover;
     padding: 300px 0;
-    margin-top: -185px;
+    margin-top: -120px;
 }
 
 .intro-container{
@@ -269,7 +269,7 @@ body{
     }
 
     .intro{ 
-        margin-top: -260px;
+        margin-top: -160px;
         width: 103%;
     }
 }
