@@ -386,6 +386,16 @@ body{
     box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308);
 }
 
+.dark-mode .tabela {
+    background-color:#474b4e;
+    
+}
+
+.dark-mode .tabela p{
+    background-color: #474b4e;
+    color: #f2f2f2;
+}
+
 .tabela1{
     padding: 40px;
 }
@@ -560,12 +570,12 @@ form{
 
 
 .dark-mode .formulario-container {
-    background-color: #45484a;
+    background-color:#474b4e;
     
 }
 
 .dark-mode .formulario-container h1{
-    background-color: #45484a;
+    background-color: #474b4e;
     color: #f2f2f2;
 }
 
@@ -773,6 +783,3 @@ button[type="submit"]:invalid {
         grid-template-columns: 1fr;
     }
 }
-
-
-
