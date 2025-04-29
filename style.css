@@ -1,3 +1,4 @@
+
 /*variáveis Dark Mode*/
 :root{
     --body-gb: #fafafa;
@@ -34,7 +35,7 @@
     font-family: 'Roboto', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
-    scroll-behavior: smooth;
+
 }
 
 body{
@@ -49,7 +50,6 @@ body{
 .dark-mode-container{
     margin: 0 0 0 20px;
 }
-
 #switch{
     position: relative;
     width: 50px;
@@ -70,7 +70,7 @@ body{
 }
 
 #switch::after{
-    content: '🌙';
+    content: '🌙'; /* Lua quando está no Dark Mode */
     position: absolute;
     width: 25px;
     height: 25px;
@@ -79,8 +79,12 @@ body{
     transition: .25s;
     border: 3px solid var(--btn-dark-mode);
     box-sizing: border-box;
+    text-align: center;
+    line-height: 25px;
+    font-size: 16px;
 }
-#switch:checked::after{
+#switch:checked::after {
+    content: '☀️'; /* Sol quando NÃO está no Dark Mode */
     left: 25px;
 }
 
@@ -236,7 +240,7 @@ body{
     background: url(img/handsome-man-barbershop-shaving-beard.jpg) no-repeat center;
     background-size: cover;
     padding: 300px 0;
-    margin-top: -120px;
+    margin-top: -130px;
 }
 
 .intro-container{
@@ -269,7 +273,7 @@ body{
     }
 
     .intro{ 
-        margin-top: -160px;
+        margin-top: -260px;
         width: 103%;
     }
 }
@@ -348,7 +352,7 @@ body{
 /* section serviço */
 
 .servico{
-    background-color: var(--bady-bg-sec);
+    background-color: var(--body-gb);
     margin: 60px auto;
     padding: 0 0 40px 0;
 }
@@ -381,19 +385,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 40px auto;
-    background-color: var(--body-gb);
+    background-color: var(--bady-bg-sec);
     border-radius: 6px;
     box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308);
-}
-
-.dark-mode .tabela {
-    background-color:#474b4e;
-    
-}
-
-.dark-mode .tabela p{
-    background-color: #474b4e;
-    color: #f2f2f2;
 }
 
 .tabela1{
@@ -570,12 +564,12 @@ form{
 
 
 .dark-mode .formulario-container {
-    background-color:#474b4e;
+    background-color: #222;
     
 }
 
 .dark-mode .formulario-container h1{
-    background-color: #474b4e;
+    background-color: #222;
     color: #f2f2f2;
 }
 
@@ -585,7 +579,7 @@ form{
     margin: 0 auto;
     padding: 30px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.308);
     border-radius: 10px;
 }
 
